@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CKD Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            text-align: center;
+            padding: 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            display: inline-block;
+            max-width: 500px;
+            width: 100%;
+        }
+        .result {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .positive {
+            background: #ffe5e5;
+            color: #cc0000;
+        }
+        .negative {
+            background: #e5ffe5;
+            color: #006600;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>CKD Prediction</h1>
+        <div class="result {% if 'CKD' in prediction %}positive{% else %}negative{% endif %}">
+            {{ prediction }}
+        </div>
+        <form action="/" method="get">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+
+</body>
+</html>
